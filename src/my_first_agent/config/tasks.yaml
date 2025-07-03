@@ -1,0 +1,24 @@
+planning_task:
+  description: >
+    Given the following objective: "{objective}", break it down into a clear list of execution steps.
+    Each step should be a concise instruction that could be followed by another agent.
+
+    The final result should be a numbered list of 3 to 7 steps maximum.
+  expected_output: >
+    A cleanly formatted numbered list of actionable steps to achieve the given objective.
+  agent: planner
+
+execution_task:
+  description: >
+    Using the steps provided by the planning task, execute each one thoroughly.
+
+    For each step:
+    - Describe what you did.
+    - Include any insights, results, or challenges found.
+
+    Be sure to preserve the step structure.
+
+    Your final answer MUST be a markdown formatted report with one section per step.
+  expected_output: >
+    A markdown report summarizing the execution of each planned step with results.
+  agent: executor
